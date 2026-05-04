@@ -25,7 +25,7 @@ Ce thème donne une identité forte à la borne et améliore l’immersion utili
 - **PHP 8+**
 - **Twig**
 - **HTML/CSS/JS**
-- **MySQL**
+- **POSTGRESQL**
 
 ---
 
