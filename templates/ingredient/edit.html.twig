@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="plat-edit-container">
+
+    <h1>Modifier l’ingrédient</h1>
+
+    <form method="post">
+
+        <label>Nom</label>
+        <input type="text" name="nom" value="{{ ingredient.nom }}" required>
+
+        <label>
+            <input type="checkbox" name="essentiel" {% if ingredient.essentiel %}checked{% endif %}>
+            Essentiel
+        </label>
+
+        <button class="btn-primary">Enregistrer</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

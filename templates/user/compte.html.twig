@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block body %}
+<section class="account-container">
+
+    <h1>Mon Compte</h1>
+
+    <div class="account-grid">
+
+        <!-- COLONNE GAUCHE : INFORMATIONS PERSONNELLES -->
+        <div class="account-left">
+            <div class="account-box account-info">
+                <h2>Informations personnelles</h2>
+
+                <p><strong>Email :</strong> {{ user.email }}</p>
+                <p><strong>Date d'inscription :</strong> {{ user.createdAt|date('d/m/Y') }}</p>
+
+                <p>
+                    <img src="/images/points.png" class="points-icon" alt="Points">
+                    <strong>Points fidélité :</strong> {{ user.points }}
+                </p>
+
+                <p><strong>Nombre de commandes :</strong> {{ nbCommandes }}</p>
+            </div>
+
+            <a href="{{ path('app_logout') }}" class="logout-btn">Se déconnecter</a>
+        </div>
+
+        <!-- COLONNE DROITE : HISTORIQUE DES COMMANDES -->
+        <div class="account-right">
+            <div class="account-box">
+                <h2>Historique des commandes</h2>
+
+                <div class="account-orders-list">
+                    {% if commandes is empty %}
+                        <p>Aucune commande pour le moment.</p>
+                    {% else %}
+                        <ul>
+                            {% for commande in commandes |reverse %}
+                                <li>
+                                    Commande du {{ commande.createdAt|date('d/m/Y H:i') }} —
+                                    Total : {{ commande.total }} €
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier {{ plat.nom }}{% endblock %}
+
+{% block body %}
+
+<div class="plat-edit-container">
+
+    <h1 class="gold-title">Modifier : {{ plat.nom }}</h1>
+
+    <div class="tabs">
+        <button class="tab active" data-tab="info">Informations</button>
+        <button class="tab" data-tab="ingredients">Ingrédients</button>
+    </div>
+
+    <!-- ONGLET INFO -->
+    <div class="tab-content active" id="info">
+        <p><strong>Description :</strong> {{ plat.descriptionCourte }}</p>
+        <p><strong>Prix :</strong> {{ plat.prix }} €</p>
+        <img src="{{ asset('images/plats/' ~ plat.image) }}" alt="{{ plat.nom }}" class="edit-img">
+    </div>
+
+    <!-- ONGLET INGREDIENTS -->
+    <div class="tab-content" id="ingredients">
+
+        <h2>Ingrédients du plat</h2>
+
+        <ul class="ingredient-list">
+            {% for ing in ingredients %}
+                <li>
+                    <span>{{ ing.nom }}</span>
+
+                    {% if ing.essentiel %}
+                        <span class="tag-essential">Essentiel</span>
+                    {% endif %}
+
+                    <div class="actions">
+                        <a href="{{ path('ingredient_edit', {id: ing.id}) }}" class="btn-secondary">Modifier</a>
+                        <a href="{{ path('ingredient_delete', {id: ing.id}) }}" class="btn-danger">Supprimer</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Ajouter un ingrédient</h3>
+
+        <form action="{{ path('ingredient_add', {platId: plat.id}) }}" method="post" class="ingredient-form">
+            <input type="text" name="nom" placeholder="Nom de l’ingrédient" required>
+
+            <label class="checkbox-row">
+                <input type="checkbox" name="essentiel">
+                Essentiel
+            </label>
+
+            <button type="submit" class="btn-primary">Ajouter</button>
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+});
+</script>
+
+{% endblock %}

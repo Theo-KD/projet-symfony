@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu - L'Empire{% endblock %}
+
+{% block banner %}
+<section class="banner menu-banner">
+    <div class="banner-content">
+        <h1 class="gold-title">Bienvenue à L’Empire</h1>
+        <p>Découvrez l’authenticité de la cuisine chinoise</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block body %}
+
+<div class="menu-container">
+
+    <!-- MENU LATERAL GAUCHE -->
+    <aside class="categories">
+        <h3>Catégories</h3>
+        <ul>
+
+            <li class="{{ activeSlug is null ? 'active' : '' }}">
+                <a href="{{ path('home') }}">Tous</a>
+            </li>
+
+            {% for cat in categories %}
+                <li class="{{ activeSlug == cat.slug ? 'active' : '' }}">
+                    <a href="{{ path('home_categorie', {slug: cat.slug}) }}">
+                        {{ cat.nom }}
+                    </a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </aside>
+
+    <!-- CONTENU PRINCIPAL -->
+    <section class="menu-content">
+
+        <h2 class="menu-title">
+            {% if activeSlug %}
+                {{ activeSlug|capitalize }}
+            {% else %}
+                Notre Menu
+            {% endif %}
+        </h2>
+
+        <p class="menu-subtitle">{{ plats|length }} plats disponibles</p>
+
+        <div class="menu-grid">
+
+            {% for plat in plats %}
+                <div class="dish-card {% if not plat.disponible %}rupture{% endif %}">
+
+                    <img src="{{ asset('images/plats/' ~ plat.image) }}" alt="{{ plat.nom }}">
+
+                    {% if not plat.disponible %}
+                        <div class="rupture-banner">Rupture de stock</div>
+                    {% endif %}
+
+                    <h3>{{ plat.nom }}</h3>
+                    <p>{{ plat.descriptionCourte }}</p>
+
+                    <div class="dish-footer">
+                        <span class="price">{{ plat.prix }}€</span>
+
+                        <div class="actions">
+
+                            {% if plat.personnalisable %}
+                                <button class="btn-secondary btn-custom"
+                                        data-plat-id="{{ plat.id }}"
+                                        {% if not plat.disponible %}disabled{% endif %}>
+                                    Personnaliser
+                                </button>
+                            {% endif %}
+
+                            <a href="{{ path('panier_add', {id: plat.id}) }}"
+                               class="btn-primary add-to-cart"
+                               data-id="{{ plat.id }}">
+                                Ajouter
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</div>
+
+
+{# ---------------------------------------------------------
+   MODAL PERSONNALISATION (UNIQUEMENT)
+---------------------------------------------------------- #}
+<div id="customModal" class="custom-modal">
+    <div class="custom-content">
+
+        <h2 id="modalPlatName">Personnaliser</h2>
+
+        <h3>Ingrédients</h3>
+        <ul id="modalIngredientList" class="ingredient-list"></ul>
+
+        <h3>Remplacer un ingrédient</h3>
+        <div class="replace-row">
+            <select id="replaceFrom">
+                <option value="">Ingrédient à remplacer</option>
+            </select>
+
+            <select id="replaceTo">
+                <option value="">Remplacer par…</option>
+            </select>
+        </div>
+
+        <div class="modal-actions">
+            <button id="cancelModal" class="btn-cancel">Annuler</button>
+            <button id="confirmCustom" class="btn-confirm">Ajouter au panier</button>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/panier.js') }}"></script>
+{% endblock %}

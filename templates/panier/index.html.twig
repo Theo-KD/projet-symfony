@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="cart-container">
+
+    <h1>Votre Panier</h1>
+
+    {% if items is empty %}
+        <p class="empty">Votre panier est vide.</p>
+    {% else %}
+
+        <div class="cart-list">
+
+            {% for item in items %}
+                <div class="cart-item">
+
+                    <!-- IMAGE -->
+                    <img src="{{ asset('images/plats/' ~ item.plat.image) }}" alt="{{ item.plat.nom }}">
+
+                    <!-- INFO PLAT -->
+                    <div class="info">
+                        <h3>{{ item.plat.nom }}</h3>
+                        <p>{{ item.plat.prix }} €</p>
+
+                        {% if item.removed is not empty %}
+                            <p class="custom-line">
+                                <strong>Sans :</strong>
+                                {% for id in item.removed %}
+                                    {{ ingredients[id] }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+
+                        {% if item.replaced is not empty %}
+                            <p class="custom-line">
+                                <strong>Remplacé :</strong>
+                                {% for r in item.replaced %}
+                                    {{ ingredients[r.from] }} → {{ ingredients[r.to] }}
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                    </div>
+
+                    <!-- QUANTITÉ -->
+                    <div class="quantity">
+                        <a href="{{ path('panier_minus', {index: loop.index0}) }}">-</a>
+                        <span>{{ item.quantity }}</span>
+                        <a href="{{ path('panier_plus', {index: loop.index0}) }}">+</a>
+                    </div>
+
+                    <!-- SUPPRESSION -->
+                    <a href="{{ path('panier_remove', {index: loop.index0}) }}" class="remove">✖</a>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- TOTAL -->
+        <div class="cart-total">
+            <h2>Total : {{ total|number_format(2, '.', ' ') }} €</h2>
+            <a href="{{ path('commande') }}" class="btn-primary">
+                Passer la commande
+            </a>
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

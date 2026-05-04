@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation - L'Empire{% endblock %}
+
+{% block banner %}
+<section class="banner reservation-banner">
+    <div class="banner-content">
+        <h1 class="gold-title">Réserver une Table</h1>
+        <p>Une expérience culinaire inoubliable vous attend</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block body %}
+
+<div class="reservation-container">
+
+    <!-- FORMULAIRE -->
+    <div class="reservation-form">
+        <h2>Informations de réservation</h2>
+
+        <form>
+
+            <label>Nom complet *</label>
+            <input type="text" placeholder="Jean Dupont" required>
+
+            <label>Email *</label>
+            <input type="email" placeholder="jean.dupont@example.com" required>
+
+            <label>Téléphone *</label>
+            <input type="text" placeholder="06 12 34 56 78" required>
+
+            <label>Date *</label>
+            <input type="date" required>
+
+            <label>Nombre de personnes *</label>
+            <select required>
+                <option>1 personne</option>
+                <option selected>2 personnes</option>
+                <option>3 personnes</option>
+                <option>4 personnes</option>
+                <option>5 personnes</option>
+                <option>6 personnes</option>
+                <option>7 personnes</option>
+                <option>8 personnes</option>
+                <option>9 personnes</option>
+            </select>
+
+            <label>Heure *</label>
+            <select required>
+                <option selected>Choisir une heure</option>
+                <option>11:30</option>
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+            </select>
+
+            <label>Demandes spéciales</label>
+            <textarea placeholder="Allergies, occasions spéciales, préférences de table..."></textarea>
+
+            <button class="btn-reservation">Confirmer la réservation</button>
+
+        </form>
+    </div>
+
+    <!-- INFORMATIONS À DROITE -->
+    <div class="reservation-info">
+
+        <div class="info-card">
+            <div class="info-header">
+                <img src="/images/icons/fraicheur.png" alt="Horaires" class="info-icon">
+                <h3>Horaires d’ouverture</h3>
+            </div>
+            <p><strong>Déjeuner :</strong> 11:30 - 14:30</p>
+            <p><strong>Dîner :</strong> 19:00 - 22:30</p>
+            <p><strong>Fermé le lundi</strong></p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-header">
+                <img src="/images/icons/convivialite.png" alt="Informations pratiques" class="info-icon">
+                <h3>Informations pratiques</h3>
+            </div>
+            <p><strong>Capacité :</strong> Notre restaurant peut accueillir jusqu’à 60 personnes.</p>
+            <p>Pour les groupes de plus de 10 personnes, merci de nous contacter directement.</p>
+            <p><strong>Politique d’annulation :</strong> Les réservations peuvent être annulées jusqu’à 4 heures avant l’heure prévue.</p>
+        </div>
+
+       <div class="info-card contact-box">
+    <div class="info-header">
+        <h3 class="contact-title-gold">Contact</h3>
+    </div>
+
+    <p>123 Rue de la Gastronomie, 75001 Paris</p>
+    <p>01 23 45 67 89</p>
+    <p>contact@lempire-restaurant.fr</p>
+    </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

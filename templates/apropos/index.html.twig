@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos - L'Empire{% endblock %}
+
+{% block banner %}
+<section class="banner apropos-banner">
+    <div class="banner-content">
+        <h1>龍</h1>
+        <h1 class="gold-title">L’Empire</h1>
+        <p>Notre histoire, nos valeurs et notre passion</p>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="apropos-container">
+
+    <!-- HISTOIRE -->
+    <section class="apropos-section">
+        <h2 class="gold-title center-title">Notre Histoire</h2>
+        <p>
+            Fondé en 1995, L'Empire est né de la passion de notre chef fondateur, Maître Chen, pour la cuisine traditionnelle chinoise. Après avoir perfectionné son art pendant plus de 20 ans dans les cuisines impériales de Pékin, il a décidé de partager sa passion et son savoir-faire en France.
+        </p>
+        <p>
+           Chaque plat que nous servons est une célébration de l'authenticité et de l'excellence. Nous sélectionnons rigoureusement nos ingrédients, privilégiant les produits frais et de saison, pour vous offrir une expérience culinaire inoubliable.
+        </p>
+        <p>
+            Notre équipe, formée aux techniques ancestrales de la cuisine chinoise, met un point d'honneur à respecter les recettes traditionnelles tout en apportant une touche de modernité qui ravira vos papilles.
+        </p>
+    </section>
+
+    <!-- VALEURS -->
+    <section class="apropos-section">
+        <h2 class="gold-title center-title">Nos Valeurs</h2>
+        <section class="apropos-section">
+
+    <div class="values-grid">
+        <div class="value-item">
+            <img src="/images/icons/authenticite.png" alt="Authenticité">
+            <span>Authenticité</span>
+            <p>Recettes traditionnelles respectées depuis des générations</p>
+        </div>
+
+        <div class="value-item">
+            <img src="/images/icons/excellence.png" alt="Excellence">
+            <span>Excellence</span>
+            <p>Des plats préparés avec rigueur et passion</p>
+        </div>
+
+        <div class="value-item">
+            <img src="/images/icons/convivialite.png" alt="Convivialité">
+            <span>Convivialité</span>
+            <p>Un accueil chaleureux dans une ambiance familiale</p>
+        </div>
+
+        <div class="value-item">
+            <img src="/images/icons/fraicheur.png" alt="Fraîcheur">
+            <span>Fraîcheur</span>
+            <p>Ingrédients de qualité, sélectionnés avec soin</p>
+        </div>
+    </div>
+</section>
+    </section>
+
+
+    <!-- ÉQUIPE -->
+    <section class="apropos-section">
+        <h2 class="gold-title center-title">Notre Équipe</h2>
+        <br>
+        <div class="team">
+        <div class="team-member">
+            <img src="/images/team/chef.jpeg" alt="Chef principal">
+            <h3>Maître Chen</h3>
+            <p>Chef Exécutif</p>
+            <p>30 ans d'expérience dans la cuisine impériale chinoise</p>
+        </div>
+
+        <div class="team-member">
+            <img src="/images/team/sous-chef.jpeg" alt="Sous-chef">
+            <h3>Li Wei</h3>
+            <p>Sous-chef</p>
+            <p>Expert en dim sum et spécialités du Sichuan</p>
+        </div>
+
+        <div class="team-member">
+            <img src="/images/team/salle.png" alt="Responsable de salle">
+            <h3>Wang hui</h3>
+            <p>Responsable de salle</p>
+            <p>Garant de votre expérience client exceptionnelle</p>
+        </div>
+    </section>
+
+    <!-- CONTACT RAPIDE -->
+  <section class="apropos-section contact-section">
+  <h2 class="contact-title">Venez Nous Rendre Visite</h2>
+
+  <div class="contact-columns">
+
+    <div class="contact-left">
+      <div class="contact-box">
+        <h3>Adresse</h3>
+        <p>
+          123 Rue de la Gastronomie<br>
+          75001 Paris, France
+        </p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Contact</h3>
+        <p>
+          📞 01 23 45 67 89<br>
+          📧 contact@lempire-restaurant.fr
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-box contact-right">
+      <h3>Horaires</h3>
+      <p>
+        Lundi Fermé<br>
+        Mardi - Dimanche  
+      </p>
+      <p>
+        Déjeuner : 11:30 - 14:30<br>
+        Dîner : 19:00 - 22:30
+      </p>
+    </div>
+
+  </div>
+
+  <div class="contact-actions">
+    <a href="/reservation" class="btn-contact-gold">Réserver une table</a>
+    <a href="/" class="btn-contact-white">Commander en ligne</a>
+  </div>
+</section>
+
+
+
+</div>
+
+{% endblock %}
+

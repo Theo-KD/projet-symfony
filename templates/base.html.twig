@@ -1,19 +1,82 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}L'Empire{% endblock %}</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="layout">
+
+<header class="header">
+
+    <!-- GAUCHE : LOGO + NOM -->
+    <div class="header-left">
+        <img src="/images/logo.png" alt="Logo" class="logo">
+        <div class="brand">
+            <h1>L’EMPIRE</h1>
+            <span>Restaurant Chinois</span>
+        </div>
+    </div>
+
+    <!-- CENTRE : NAVIGATION -->
+    <nav class="nav">
+        <a href="{{ path('home') }}">Menu</a>
+        <a href="{{ path('app_reservation') }}">Réservation</a>
+        <a href="{{ path('app_apropos') }}">À propos</a>
+    </nav>
+
+    <!-- DROITE : POINTS + PANIER + COMPTE -->
+    <div class="header-right">
+
+        {% if app.user %}
+
+            <!-- Points fidélité -->
+            <div class="points">
+                <img src="/images/points.png" alt="Points" class="icon-lg">
+                {{ app.user.points }} pts
+            </div>
+
+            <!-- Compte utilisateur -->
+            <a href="{{ path('app_compte') }}" class="account">
+                <img src="/images/account.png" alt="Compte" class="icon-lg">
+            </a>
+
+            <!-- Panier -->
+            {% set panier = app.session.get('panier', []) %}
+            <a href="{{ path('panier') }}" class="cart">
+                <img src="/images/cart.png" alt="Panier" class="icon-lg">
+                <span class="cart-count">
+                    {{ panier
+                        |map(p => p.quantity ?? 0)
+                        |reduce((total, q) => total + q, 0)
+                    }}
+                </span>
+            </a>
+
+        {% else %}
+
+            <a href="{{ path('app_login') }}" class="account">Connexion</a>
+            <a href="{{ path('app_register') }}" class="account">Inscription</a>
+
+        {% endif %}
+
+    </div>
+
+</header>
+
+<main>
+    {% block banner %}{% endblock %}
+    {% block body %}{% endblock %}
+</main>
+
+<footer class="footer">
+    <p>© 2026 L'Empire Restaurant Chinois — Tous droits réservés</p>
+</footer>
+
+<script src="{{ asset('js/panier.js') }}"></script>
+</body>
 </html>

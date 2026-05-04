@@ -1,0 +1,2100 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.nav a:hover {
+    color: #e6b800;
+}
+
+/* HERO */
+.hero {
+    height: 70vh;
+    background: url('/images/restaurant.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content {
+    background: rgba(0,0,0,0.55);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #e6b800;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #ffcc00;
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.section.dark {
+    background: #111;
+    color: white;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.section-text {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0 5px;
+}
+
+.card p {
+    padding: 0 15px 20px;
+    font-size: 15px;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+/* CONTAINER GLOBAL */
+.menu-container {
+    display: flex;
+    padding: 30px;
+    gap: 40px;
+}
+
+/* MENU LATERAL */
+.categories {
+    width: 220px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.categories h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.categories li:hover {
+    background: #f0f0f0;
+}
+
+.categories li.active {
+    background: #e6b800;
+    color: black;
+    font-weight: 600;
+}
+
+/* CONTENU PRINCIPAL */
+.menu-content {
+    flex: 1;
+}
+
+.menu-header {
+    background: url('/images/restaurant.jpg') center/cover;
+    padding: 60px;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+}
+
+.btn-surprise {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #e6b800;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.menu-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.menu-subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* GRID DES PLATS */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* CARTE PLAT */
+.dish-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.dish-card:hover {
+    transform: translateY(-5px);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.dish-card h3 {
+    margin: 15px;
+}
+
+.dish-card p {
+    margin: 0 15px 10px;
+    color: #555;
+}
+
+.ingredients {
+    display: block;
+    margin: 0 15px 15px;
+    font-size: 14px;
+    color: #888;
+}
+
+.dish-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.actions button {
+    margin-left: 5px;
+}
+
+.btn-secondary {
+    padding: 8px 12px;
+    background: #ddd;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    padding: 8px 12px;
+    background: #e6b800;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+/* HEADER GLOBAL */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0px;
+    background: #111;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    height: 55px;
+}
+
+/* GAUCHE : LOGO + NOM */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    font-size: 13px;
+    color: #e6b800;
+    margin-top: -5px;
+    display: block;
+}
+
+/* NAVIGATION */
+.nav a {
+    color: white;
+    margin: 0 18px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: #e6b800;
+}
+
+/* DROITE : POINTS + PANIER */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.points {
+    background: #222;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #e6b800;
+    border: 1px solid #333;
+}
+
+.cart {
+    font-size: 26px;
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.cart:hover {
+    color: #e6b800;
+}
+/* PANIER */
+.cart-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-container h1 {
+    margin-bottom: 25px;
+}
+
+.empty {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.cart-item .info h3 {
+    margin: 0;
+}
+
+.cart-item .info p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.quantity {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.remove {
+    font-size: 20px;
+    cursor: pointer;
+    color: #c00;
+    margin-left: 15px;
+}
+
+.cart-total {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.cart-total h2 {
+    margin-bottom: 15px;
+}
+
+/* BANNIÈRE */
+.reservation-banner {
+    height: 280px;
+    background: url('/images/reservation.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.banner-content h1 {
+    font-size: 42px;
+    margin: 0;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* CONTAINER PRINCIPAL */
+.reservation-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* FORMULAIRE */
+.reservation-form {
+    flex: 2;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.reservation-form h2 {
+    margin-bottom: 20px;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.reservation-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* INFO À DROITE */
+.reservation-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    background: #e6b800;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: #ffcc00;
+}
+.menu-banner {
+    height: 280px;
+    background: url('/images/menu.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* BANNIÈRE À PROPOS */
+.apropos-banner {
+    height: 280px;
+    background: url('/images/about.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+
+/* CONTAINER */
+.apropos-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* SECTIONS */
+.apropos-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.apropos-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.apropos-section p {
+    line-height: 1.6;
+    color: #444;
+}
+
+/* LISTE DES VALEURS */
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 4px solid #e6b800;
+}
+
+.apropos-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.apropos-banner h1:first-child {
+    font-size: 80px; /* taille du caractère 龍 */
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #e6b800; /* doré pour rappeler ton logo */
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* 45% de noir */
+    z-index: 1;
+}
+
+.banner .banner-content {
+    position: relative;
+    z-index: 2; /* Passe au-dessus du filtre */
+}
+
+.gold-title {
+    color: #e6b800; /* doré */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* IMPORTANT */
+    padding: 0 20px;
+    background: white; /* ou noir selon ton design */
+}
+main {
+    padding-top: 55px;
+}
+
+.categories {
+    position: fixed;
+    top: 90px; /* juste sous le header */
+    left: 0;
+    width: 250px; /* ta largeur actuelle */
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    padding: 20px;
+    background: white; /* pour éviter la transparence */
+    border-right: 1px solid #eee;
+    z-index: 2000; /* AJOUT IMPORTANT */
+}
+
+.menu-content {
+    margin-left: 270px; /* largeur de la colonne + marge */
+    padding: 20px 40px;
+}
+
+.categories {
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.85);
+}
+@media (max-width: 900px) {
+
+    .header {
+        padding: 12px 20px;
+        gap: 10px;
+    }
+
+    .header-left .brand h1 {
+        font-size: 18px;
+    }
+
+    .nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
+
+    .points {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .cart {
+        font-size: 22px;
+    }
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.team-member h3 {
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+.team-member p {
+    color: #777;
+    margin-top: 4px;
+}
+
+.values-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.value-item {
+    flex: 1;
+    text-align: center;
+    gap: 60px;
+}
+
+.value-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.value-item span {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* SECTION CONTACT EXACTE */
+.contact-section {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 40px 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 32px;
+  color: #e6b800;
+  margin-bottom: 30px;
+}
+
+/* 2 colonnes : gauche (Adresse+Contact), droite (Horaires) */
+.contact-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Colonne gauche = pile Adresse + Contact */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Colonne droite = Horaires */
+.contact-right {
+  flex: 1;
+}
+
+/* Style des blocs */
+.contact-box h3 {
+  color: #e6b800;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.contact-box p {
+  color: #ddd;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* BOUTONS */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* BOUTON DORÉ */
+.btn-contact-gold {
+    padding: 12px 100px;
+    background: #e6b800;
+    color: black;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-contact-gold:hover {
+    background: #ffcc00;
+}
+
+/* BOUTON BLANC EXACT */
+.btn-contact-white {
+    padding: 12px 100px;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-contact-white:hover {
+    background: #f2f2f2;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;   /* plus d’espace */
+    margin-top: 30px; /* espace au-dessus */
+}
+
+.center-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* FORMULAIRE RÉSERVATION – STYLE IMAGE */
+.reservation-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.reservation-form {
+    flex: 2;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.reservation-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reservation-form label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.reservation-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* BOUTON NOIR COMME SUR L’IMAGE */
+.btn-reservation {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.btn-reservation:hover {
+    background: #333;
+}
+
+/* CARTES D’INFOS À DROITE AVEC ICONES IMAGES */
+.reservation-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.info-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.info-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* ICONES INLINE DANS LES LIGNES CONTACT */
+.inline-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 0px;
+    vertical-align: middle;
+}
+
+/* BOX CONTACT SPÉCIALE */
+.contact-box {
+    background: #000;              /* fond noir */
+    color: white;                  /* texte blanc */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Titre doré */
+.contact-title-gold {
+    color: #e6b800;
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Icône dorée */
+.contact-box .info-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-right: 10px;
+    filter: brightness(1.1);       /* boost léger du doré */
+}
+
+/* Texte blanc */
+.contact-box p {
+    color: #fff;
+    margin: 6px 0;
+    font-size: 15px;
+}
+.dish-card.rupture img {
+    filter: grayscale(100%) brightness(0.5);
+}
+
+.rupture-banner {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.categories a {
+    text-decoration: none;   /* retire le soulignement */
+    color: #222;             /* couleur du texte */
+}
+
+.categories a:hover {
+    color: #e6b800;          /* couleur au survol */
+}
+
+.categories li.active a {
+    color: #111;             /* couleur du texte actif */
+}
+
+/* Connexion & Inscription */
+.header-right .account {
+    text-decoration: none;     /* retire le soulignement */
+    color: white;              /* couleur du texte */
+    font-weight: 400;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.25s ease;
+}
+
+/* Hover doré */
+.header-right .account:hover {
+    color: #e6b800;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Structure sticky footer */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1; /* pousse le footer en bas */
+}
+
+/* Footer toujours collé en bas */
+.footer {
+    margin-top: auto;
+}
+
+/* --- WRAPPER GLOBAL --- */
+.commande-wrapper {
+    display: flex;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* --- FORMULAIRE DE PAIEMENT --- */
+.paiement-box {
+    flex: 1;
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.paiement-box h2,
+.paiement-box h3 {
+    color: #cfa600;
+    margin-bottom: 15px;
+}
+
+.paiement-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.paiement-form input {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 14px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.paiement-form input:focus {
+    border-color: #cfa600;
+    box-shadow: 0 0 8px rgba(207,166,0,0.5);
+    outline: none;
+}
+
+.reduction-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cfa600;
+    font-weight: 600;
+}
+
+/* --- BOUTON PAYER --- */
+.paiement-form button {
+    background: #cfa600;
+    color: #111;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.paiement-form button:hover {
+    background: #e5c23d;
+}
+
+/* --- RÉCAPITULATIF DES ARTICLES --- */
+.recap-box {
+    width: 350px;
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    color: white;
+}
+
+.recap-box h3 {
+    color: #cfa600;
+    margin-bottom: 20px;
+}
+
+.recap-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.recap-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.recap-item strong {
+    margin-left: auto;
+    color: #cfa600;
+}
+
+.total-box {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    font-size: 20px;
+    font-weight: bold;
+    color: #cfa600;
+}
+
+/* --- BADGE PAIEMENT SÉCURISÉ --- */
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1a1a1a;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    color: #cfa600;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.secure-badge .lock {
+    font-size: 22px;
+}
+
+/* --- LOGOS DES CARTES --- */
+.card-logos {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.card-logos img {
+    height: 32px;
+    filter: brightness(0.85);
+    transition: 0.2s;
+}
+
+.card-logos img:hover {
+    filter: brightness(1);
+}
+
+/* --- LOADER ANIMÉ --- */
+.loader {
+    display: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #fff;
+    border-top-color: #cfa600;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Quand le bouton est en mode chargement */
+.btn-loading .btn-text {
+    opacity: 0;
+}
+
+.btn-loading .loader {
+    display: inline-block;
+}
+
+.card-logos img {
+    height: 32px;
+    width: auto;
+    filter: brightness(0.85);
+    transition: 0.2s;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #ddd;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .small {
+    flex: 1;
+}
+
+.required-info {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+/* Structure générale */
+.commande-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+/* Formulaire plus compact */
+.paiement-box {
+    width: 380px; /* taille réduite comme l’image */
+}
+
+/* Labels + champs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #ddd;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background: #1a1a1a;
+    color: white;
+}
+
+/* Ligne date + CVC */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .small {
+    flex: 1;
+}
+
+/* Texte "champ obligatoire" */
+.required-info {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+/* Récap à droite */
+.recap-box {
+    flex: 1;
+}
+
+.points-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.points-info-box{
+    color: white;
+}
+
+/* -----------------------------
+   LAYOUT GLOBAL
+------------------------------*/
+
+.account-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Deux colonnes */
+.account-grid {
+    display: flex;
+    gap: 25px;
+}
+
+/* Colonne gauche et droite */
+.account-left,
+.account-right {
+    flex: 1;
+}
+
+/* -----------------------------
+   BOX NOIRES PREMIUM
+------------------------------*/
+
+.account-box {
+    background: #0f0f0f;
+    border-radius: 14px;
+    padding: 25px;
+    border: 1px solid #1f1f1f;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    color: #e6e6e6;
+}
+
+/* Titres dorés */
+.account-box h2 {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* -----------------------------
+   INFORMATIONS PERSONNELLES
+------------------------------*/
+
+.account-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.account-info strong {
+    color: #fff;
+}
+
+/* Icône des points */
+.points-icon {
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    margin-right: 6px;
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+}
+
+/* -----------------------------
+   HISTORIQUE DES COMMANDES
+------------------------------*/
+
+/* Scroll si trop long */
+.account-orders-list {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Style scrollbar */
+.account-orders-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.account-orders-list::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.account-orders-list::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.account-orders-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.account-orders-list li {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    transition: 0.25s ease;
+}
+
+.account-orders-list li:hover {
+    background: #2a2a2a;
+    border-color: #d4af37;
+}
+
+/* -----------------------------
+   BOUTON DE DÉCONNEXION
+------------------------------*/
+
+.logout-btn {
+    display: inline-block;
+    background: #b30000;
+    padding: 12px 22px;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s ease;
+    margin-top: 20px;
+}
+
+.logout-btn:hover {
+    background: #e60000;
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   RESPONSIVE
+------------------------------*/
+
+@media (max-width: 900px) {
+    .account-grid {
+        flex-direction: column;
+    }
+}
+
+/* Icônes du header */
+.header-right .icon {
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    margin-right: 6px;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
+}
+
+/* Points fidélité */
+.header-right .points {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #d4af37; /* doré */
+}
+
+/* --- HEADER GLOBAL --- */
+.header {
+    height: 90px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+/* --- GAUCHE : LOGO + NOM --- */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.brand span {
+    font-size: 12px;
+    color: #e6b800;
+    margin-top: -4px;
+    display: block;
+}
+
+/* --- CENTRE : NAVIGATION --- */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: #e6b800;
+}
+
+/* --- DROITE : POINTS + COMPTE + PANIER --- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Points fidélité */
+.points {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #222;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #e6b800;
+    font-weight: 600;
+}
+
+/* Icônes */
+.icon-lg {
+    width: 26px;
+    height: 26px;
+}
+
+/* Compte */
+.account {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 6px;
+    transition: 0.25s ease;
+}
+
+.account:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Panier */
+.cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 6px;
+    transition: 0.25s ease;
+}
+
+.cart:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Bulle compteur */
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #d4af37;
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 25%;
+    border: 2px solid #000;
+    min-width: 10px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right {
+    margin-right: 40px; /* décale tout le bloc vers la gauche */
+}
+
+/* ------------------------------
+   PAGE AUTH (LOGIN / REGISTER)
+------------------------------ */
+
+.auth-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 14px;
+    padding: 32px 28px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.4s ease;
+}
+
+/* TITRE */
+.auth-card h1 {
+    text-align: center;
+    color: #d4af37;
+    font-size: 26px;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+}
+
+/* FORM SYMFONY : WRAPPER GLOBAL */
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* FORM ROW (Symfony) */
+.auth-card .form-group,
+.auth-card .form-row,
+.auth-card div[class^="form_"],
+.auth-card div.form-check {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+/* LABELS */
+.auth-card label {
+    color: #e6e6e6;
+    font-size: 14px;
+}
+
+/* INPUTS / SELECT / PASSWORD */
+.auth-card input[type="text"],
+.auth-card input[type="email"],
+.auth-card input[type="password"],
+.auth-card input[type="number"],
+.auth-card select {
+    width: 100%;
+    padding: 11px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* CHECKBOX (agreeTerms) */
+.auth-card .form-check {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-card .form-check input[type="checkbox"] {
+    width: auto;
+    accent-color: #d4af37;
+}
+
+.auth-card .form-check label {
+    font-size: 13px;
+}
+
+/* ERREURS SYMFONY */
+.auth-card .form-error-message,
+.auth-card .invalid-feedback {
+    color: #ff6b6b;
+    font-size: 12px;
+}
+
+/* BOUTON */
+.auth-card button,
+.auth-card .btn-primary {
+    width: 100%;
+    padding: 11px;
+    background: #d4af37;
+    border: none;
+    border-radius: 10px;
+    color: #0d0d0d;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.2s;
+}
+
+.auth-card button:hover,
+.auth-card .btn-primary:hover {
+    background: #b8922b;
+    transform: scale(1.02);
+}
+
+/* LIENS */
+.auth-links {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.auth-links a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Container global */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0f0f; /* Fond sombre premium */
+    padding: 20px;
+}
+
+/* Carte du formulaire */
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: #1a1a1a;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* Titre */
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #f1f1f1;
+}
+
+/* Champs du formulaire */
+.auth-card form div {
+    margin-bottom: 18px;
+}
+
+.auth-card label {
+    color: #dcdcdc;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+/* Bouton */
+.btn-primary {
+    background: #f5c518;
+    color: #000;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #ffdd4a;
+}
+
+/* Lien bas */
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #f5c518;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Container global */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0f0f;
+    padding: 20px;
+}
+
+/* Carte du formulaire */
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: #1a1a1a;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* Titre */
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #f1f1f1;
+}
+
+/* Champs du formulaire */
+.auth-card form div {
+    margin-bottom: 18px;
+}
+
+.auth-card label {
+    color: #dcdcdc;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+/* Bouton */
+.btn-primary {
+    background: #f5c518;
+    color: #000;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #ffdd4a;
+}
+
+/* Lien bas */
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #f5c518;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   MODAL OVERLAY
+============================ */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* assombrissement */
+    display: none; /* JS met display:flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* au-dessus de tout */
+    backdrop-filter: blur(3px); /* effet premium */
+}
+
+/* ============================
+   CONTENU DU MODAL
+============================ */
+.custom-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    animation: modalFadeIn 0.25s ease-out;
+}
+
+/* Animation d’apparition */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================
+   ONGLET DU MODAL
+============================ */
+.modal-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-tabs .tab {
+    flex: 1;
+    padding: 10px;
+    background: #eee;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.modal-tabs .tab.active {
+    background: #cfa600;
+    color: white;
+}
+
+/* ============================
+   CONTENU DES ONGLET
+============================ */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================
+   LISTE D’INGRÉDIENTS
+============================ */
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.ingredient-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tag-essential {
+    background: #cfa600;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* ============================
+   BOUTONS DU MODAL
+============================ */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    background: #ccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    background: #cfa600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65); /* overlay */
+    display: none; /* JS met display:flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* très important */
+    backdrop-filter: blur(3px); /* effet premium */
+}
+
+.custom-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
