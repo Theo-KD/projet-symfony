@@ -33,5 +33,5 @@ Ce thème donne une identité forte à la borne et améliore l’immersion utili
 
 ### 1️⃣ Cloner le dépôt
 ```bash
-git clone https://github.com/<ton_nom>/projet-symfony.git
+git clone https://github.com/Theo-KD/projet-symfony.git
 cd projet-symfony
