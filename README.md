@@ -24,7 +24,7 @@ Ce thème donne une identité forte à la borne et améliore l’immersion utili
 - **Symfony 6**
 - **PHP 8+**
 - **Twig**
-- **HTML/CSS/JS**
+- **CSS/JS**
 - **POSTGRESQL**
 
 ---
